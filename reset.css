@@ -1,0 +1,62 @@
+/* ========== Сброс отступов и границ ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== Сброс типографики ========== */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;   
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.5;               
+  -webkit-font-smoothing: antialiased;  
+  -moz-osx-font-smoothing: grayscale;  
+}
+
+/* ========== Сброс медиа-элементов ========== */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;                 
+  height: auto;                   
+}
+
+/* ========== Сброс форм ========== */
+input, button, textarea, select {
+  font: inherit;                    
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ========== Сброс ссылок ========== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========== Сброс списков ========== */
+ul, ol {
+  list-style: none;
+}
+
+/* ========== Сброс заголовков ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+/* ========== Упрощение для доступности ========== */
+html:focus-within {
+  scroll-behavior: smooth;
+}
