@@ -1,39 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+        rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>SEO-продвижение сайтов - Видимость.digital</title>
 </head>
 
 <body>
-    <header class="header"> <a href="#" class="logo"></a>
+    <header class="header">
+        <a href="#" class="logo"></a>
         <nav class="nav">
             <ul class="nav__list">
-                <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
-                <li class="nav__item"><a href="#about" class="nav__link">Обо мне</a></li>
-                <li class="nav__item"><a href="#cases" class="nav__link">Кейсы</a></li>
-                <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Услуги</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">Обо мне</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#cases" class="nav__link">Кейсы</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contacts" class="nav__link">Контакты</a>
+                </li>
             </ul>
         </nav>
         <div class="contacts">
             <a href="tel:+79997203373" class="contacts__phone">+7 (999) 720-33-73</a>
             <a href="mailto:seosohard@ya.ru" class="contacts__email">seosohard@ya.ru</a>
         </div>
+        <button class="burger" id="burgerBtn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
     <main class="main">
         <section class="hero">
-            <div class="container">
-                <h1 class="main-title">заголовок</h1>
+
+            <div class="hero__left-box"></div>
+            <div class="hero__right-box">
+                <h1 class="main-title">SEO-продвижение <br>с оплатой за результат</h1>
+                <p class="hero__subtitle">
+                    Проведу технический и коммерческий аудит вашего сайта. Покажу, что мешает ему зарабатывать больше, и
+                    составлю план продвижения.</p>
+                <p class="hero__subtitle">После аудита вы получите:
+                </p>
+                <ul class="hero__list">
+                    <li>Список технических ошибок, которые отталкивают поисковики</li>
+                    <li>Анализ конкурентов в вашей нише</li>
+                    <li>Точки роста: как увеличить трафик без увеличения бюджета</li>
+                    <li>Персональный план работ на 3 месяца</li>
+                </ul>
+                <button type="button" class="hero__btn" id="auditBtn">Заказать бесплатный аудит</button>
             </div>
+
+
         </section>
         <section class="services">
             <div class="container"></div>
