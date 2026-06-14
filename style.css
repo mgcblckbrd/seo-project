@@ -541,3 +541,42 @@ h3 {
   color: #555;
   line-height: 1.5;
 }
+
+
+/* ========== БЕСКОНЕЧНАЯ ЛЕНТА ЛОГОТИПОВ ========== */
+.marquee {
+  margin-top: 20px;
+  height: 65px;
+  overflow: hidden;
+  background-color: #F0F0F0;
+  position: relative;
+}
+
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: absolute;
+  will-change: transform;
+  /* Начальное положение: первый набор логотипов виден, второй — за правым краем */
+  transform: translateX(0);
+}
+
+.marquee__logo {
+  height: 40px;
+  width: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.marquee__logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+/* При наведении на секцию анимация останавливается */
+.marquee.paused .marquee__track {
+  animation-play-state: paused;
+}

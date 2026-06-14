@@ -184,8 +184,56 @@ function resetForm() {
   clearErrors();
   customTimeInput.classList.remove("visible");
   customTimeInput.disabled = true;
-  // Возвращаем видимость формы, если она была скрыта
   auditForm.style.display = "";
   const formSuccess = document.getElementById("formSuccess");
   if (formSuccess) formSuccess.classList.remove("visible");
 }
+
+// ========== БЕСКОНЕЧНАЯ ПРОКРУТКА ЛОГОТИПОВ (с плавной остановкой) ==========
+const marquee = document.getElementById("marquee");
+const track = document.getElementById("marqueeTrack");
+const logos = track.querySelectorAll(".marquee__logo");
+
+logos.forEach((logo) => {
+  const clone = logo.cloneNode(true);
+  track.appendChild(clone);
+});
+
+const baseSpeed = 0.5;
+let currentSpeed = baseSpeed;
+let position = 0;
+let animationId;
+let isHovering = false;
+
+function animate() {
+  const targetSpeed = isHovering ? 0 : baseSpeed;
+  const easing = 0.08;
+  currentSpeed += (targetSpeed - currentSpeed) * easing;
+
+  if (Math.abs(currentSpeed) < 0.01 && isHovering) {
+    animationId = requestAnimationFrame(animate);
+    return;
+  }
+
+  position -= currentSpeed;
+  track.style.transform = `translateX(${position}px)`;
+
+  const singleSetWidth = track.scrollWidth / 2;
+  if (position <= -singleSetWidth) {
+    position += singleSetWidth;
+  }
+
+  animationId = requestAnimationFrame(animate);
+}
+
+animate();
+
+marquee.addEventListener("mouseenter", () => {
+  isHovering = true;
+  marquee.classList.add("paused");
+});
+
+marquee.addEventListener("mouseleave", () => {
+  isHovering = false;
+  marquee.classList.remove("paused");
+});
