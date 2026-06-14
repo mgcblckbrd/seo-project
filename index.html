@@ -1,38 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+        rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>SEO-продвижение сайтов - Видимость.digital</title>
 </head>
 
 <body>
-    <header class="header"> <a href="#" class="logo"></a>
+    <header class="header">
+        <a href="#" class="logo"></a>
         <nav class="nav">
             <ul class="nav__list">
-                <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
-                <li class="nav__item"><a href="#about" class="nav__link">Обо мне</a></li>
-                <li class="nav__item"><a href="#cases" class="nav__link">Кейсы</a></li>
-                <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Услуги</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">Обо мне</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#cases" class="nav__link">Кейсы</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contacts" class="nav__link">Контакты</a>
+                </li>
             </ul>
         </nav>
         <div class="contacts">
             <a href="tel:+79997203373" class="contacts__phone">+7 (999) 720-33-73</a>
             <a href="mailto:seosohard@ya.ru" class="contacts__email">seosohard@ya.ru</a>
         </div>
+        <button class="burger" id="burgerBtn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
     <main class="main">
         <section class="hero">
-            <div class="container">
-                <h1 class="main-title">заголовок</h1>
+
+            <div class="hero__left-box"></div>
+            <div class="hero__right-box">
+                <h1 class="main-title">SEO-продвижение <br>с оплатой за результат</h1>
+                <p class="hero__subtitle">
+                    Проведу технический и коммерческий аудит вашего сайта. Покажу, что мешает ему зарабатывать больше, и
+                    составлю план продвижения.</p>
+                <p class="hero__subtitle">После аудита вы получите:
+                </p>
+                <ul class="hero__list">
+                    <li>Список технических ошибок, которые отталкивают поисковики</li>
+                    <li>Анализ конкурентов в вашей нише</li>
+                    <li>Точки роста: как увеличить трафик без увеличения бюджета</li>
+                    <li>Персональный план работ на 3 месяца</li>
+                </ul>
+                <button type="button" class="hero__btn" id="auditBtn">Заказать бесплатный аудит</button>
+            </div>
+
+
+        </section>
+        <section class="marquee" id="marquee">
+            <div class="marquee__track" id="marqueeTrack">
+                <!-- Логотипы (можно любое количество) -->
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/mos-vrata.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
+                <img src="./images/aomi.png" alt="Партнёр 1" class="marquee__logo">
             </div>
         </section>
         <section class="services">
@@ -49,6 +98,87 @@
         </section>
     </main>
     <footer class="footer"></footer>
+    <!-- Попап заявки на аудит -->
+    <div class="popup" id="auditPopup">
+        <div class="popup__content">
+            <button type="button" class="popup__close" id="closeAuditPopup">✕</button>
+            <h2 class="popup__title">Заказать бесплатный SEO‑аудит</h2>
+
+            <form class="form-audit" id="auditForm" novalidate>
+                <!-- Имя -->
+                <div class="form-audit__field">
+                    <label class="form-audit__label" for="auditName">Имя <span class="required">*</span></label>
+                    <input type="text" id="auditName" name="name" class="form-audit__input" placeholder="Ваше имя"
+                        required />
+                    <span class="form-audit__error" id="nameError"></span>
+                </div>
+
+                <!-- Телефон -->
+                <div class="form-audit__field">
+                    <label class="form-audit__label" for="auditPhone">Номер телефона <span
+                            class="required">*</span></label>
+                    <input type="tel" id="auditPhone" name="phone" class="form-audit__input"
+                        placeholder="+7 (999) 123-45-67" required />
+                    <span class="form-audit__error" id="phoneError"></span>
+                </div>
+
+                <!-- Сайт -->
+                <div class="form-audit__field">
+                    <label class="form-audit__label" for="auditSite">Адрес сайта</label>
+                    <input type="url" id="auditSite" name="site" class="form-audit__input"
+                        placeholder="https://example.com" />
+                    <span class="form-audit__error" id="siteError"></span>
+                </div>
+
+                <!-- Выбор времени -->
+                <fieldset class="form-audit__time">
+                    <legend class="form-audit__label">В какое время вам удобно ответить на звонок</legend>
+                    <div class="form-audit__radio-group">
+                        <label class="form-audit__radio">
+                            <input type="radio" name="callTime" value="morning" />
+                            <span>С 9:00 до 12:00</span>
+                        </label>
+                        <label class="form-audit__radio">
+                            <input type="radio" name="callTime" value="afternoon" />
+                            <span>12:00 – 15:00</span>
+                        </label>
+                        <label class="form-audit__radio">
+                            <input type="radio" name="callTime" value="evening" />
+                            <span>15:00 – 18:00</span>
+                        </label>
+                        <label class="form-audit__radio">
+                            <input type="radio" name="callTime" value="late" />
+                            <span>После 18:00</span>
+                        </label>
+                        <label class="form-audit__radio">
+                            <input type="radio" name="callTime" value="custom" id="customTimeRadio" />
+                            <span>Свой вариант ответа</span>
+                        </label>
+                        <input type="text" id="customTimeInput" class="form-audit__input form-audit__input--custom"
+                            placeholder="Укажите удобное время" disabled />
+                    </div>
+                </fieldset>
+
+                <!-- Согласие -->
+                <div class="form-audit__consent">
+                    <label class="form-audit__checkbox">
+                        <input type="checkbox" id="auditConsent" required />
+                        <span>Я даю согласие на обработку моих персональных данных (Имя, номер телефона, email, адрес
+                            сайта) в соответствии с Политикой обработки персональных данных</span>
+                    </label>
+                    <span class="form-audit__error" id="consentError"></span>
+                </div>
+
+                <!-- Кнопка отправки -->
+                <button type="submit" class="hero__btn form-audit__btn">Отправить заявку</button>
+            </form>
+            <div class="form-success" id="formSuccess">
+                <div class="form-success__icon">✓</div>
+                <h2 class="form-success__title">Заявка отправлена!</h2>
+                <p class="form-success__text">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
