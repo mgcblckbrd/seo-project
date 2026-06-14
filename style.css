@@ -3,7 +3,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: #333;
+  color: #2d3134;
+  background-color: #f0f0f0;
 }
 
 h1,
@@ -194,19 +195,26 @@ h3 {
 .hero__btn {
   inline-size: 40%;
   padding: 14px 32px;
-  background-color: transparent;
-  color: #111a35;
-  border: 1px solid #111a35;
+  border: 1px, solid, #2d3134;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(108, 52, 227, 0.35);
 }
 
 .hero__btn:hover {
-  background-color: #1a2a50;
-  color: #fff;
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(123, 10, 215, 0.4);
+}
+
+.hero__btn:active {
+  transform: translateY(0);
 }
 
 /* ========== СЕКЦИИ-ЗАГЛУШКИ ========== */
@@ -503,7 +511,7 @@ h3 {
 
 /* Сообщение об успешной отправке */
 .form-success {
-  display: none;              /* скрыт по умолчанию */
+  display: none; /* скрыт по умолчанию */
   text-align: center;
   padding: 20px 10px;
 }
